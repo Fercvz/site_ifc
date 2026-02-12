@@ -46,6 +46,15 @@ async def health():
     return {"status": "ok", "message": "IFC Analysis Platform API is running."}
 
 
+@app.get("/")
+async def root():
+    return {
+        "message": "IFC Analysis Platform API is running 🚀",
+        "docs": "/docs",
+        "health": "/api/health"
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))
