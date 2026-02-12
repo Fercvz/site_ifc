@@ -9,7 +9,7 @@ import DictionaryView from './views/DictionaryView.jsx'
 import ValidationView from './views/ValidationView.jsx'
 import ChatView from './views/ChatView.jsx'
 
-const API_BASE = '/api'
+const API_BASE = import.meta.env.VITE_API_URL || '/api'
 
 export default function App() {
     const [activeView, setActiveView] = useState('upload')
